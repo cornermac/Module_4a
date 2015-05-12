@@ -543,8 +543,8 @@ var superTrucks = function(){
 		}
 		mungeArray = _.sortBy(mungeArray);
 		// then JSON.stringify(uniqueArray) to send out the JSON list of food types
-		foodTypeString = JSON.stringify(mungeArray);
-		return foodTypeString;
+		//foodTypeString = JSON.stringify(mungeArray);
+		return mungeArray;
 	};
 	
 	

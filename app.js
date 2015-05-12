@@ -21,12 +21,7 @@ var truckObject = trucks();
 
 app.get('/trucks',function(request,response){
 	var truckList = truckObject.getTrucks();
-	response.send(JSON.stringify(truckList));
-//	var nameString = '';
- // for(i=0;i<truckList.length;i++){
-//	nameString = nameString + truckList[i].name + '<br>';
-//  }
- // response.send(nameString);
+	response.send(truckList);
 });
 
 
@@ -104,16 +99,15 @@ app.get('/trucks/:name',function(request,response){
 app.get('/food-types',function(request,response){
 
   var foodTypes = truckObject.getFoodTypes();
- // var foodString = '';
- // for(i=0;i<foodTypes.length;i++){
-//	foodString = foodString + foodTypes[i] + '<br>';
- // }
- // response.send(foodString);
- response.send(foodTypes);
+  var foodString = '';
+  for(i=0;i<foodTypes.length;i++){
+	foodString = foodString + foodTypes[i] + '<br>';
+  }
+  response.send(foodString);
 });
 
 
-app.get('/trucksfood/:name',function(request,response){
+app.get('/food-types/:name',function(request,response){
 	var foodName = request.params.name;
   var filteredTrucks = truckObject.filterByFoodType(foodName);
   var nameString = '';
